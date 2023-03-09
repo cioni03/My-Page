@@ -8,7 +8,7 @@ No database is required, instead text files are used to store the data entered.
 Just unzip and copy all the zip file content inside the root of your server. No configuration, no code required to start using it.
 
 <b>Credentials</b><br>
-Go to yourwebsite/edit.php
+To access to the admin area go to yourwebsite/login.php
 
 Username: admin1<br>
 Password: password1
