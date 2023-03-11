@@ -130,7 +130,7 @@ if (isset($_SESSION['UserData']['Username'])) {
         // Simulate a click on the link to download the file
         link.click();
 
-        // Remove the link from the document
+        // Remove link from the document
         document.body.removeChild(link);
     }
 </script>
