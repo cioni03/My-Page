@@ -11,5 +11,5 @@ Once inside the edit.php page, the "text" folder will automatically be generated
 <h1>Credentials</h1>
 To access to the admin area go to yourwebsite/login.php
 
-Username: admin1<br>
-Password: password1
+Username: admin<br>
+Password: password
