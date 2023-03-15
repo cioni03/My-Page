@@ -127,3 +127,14 @@ input.btn {
   margin-top: 22px;
 }
 
+/*Settings accordition*/
+.accordion-button {
+    border-radius: 10px!important;
+  border-width: 2px;
+  border-color: #eeeeee;
+  border-style: solid;
+     outline: none!important;
+  box-shadow: none!important;
+}
+
+

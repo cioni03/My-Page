@@ -1,17 +1,7 @@
-<?php session_start(); /* Starts the session */
-
-if (!isset($_SESSION['UserData']['Username'])) {
-    header("location:login.php");
-    exit;
-}
-?>
-
 <?php
 include "folder.php";
 folder();
 ?>
-
-
 
 <!--Save and get data-->
 <?php
@@ -82,12 +72,10 @@ $text5 = file_get_contents($file5);
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-xl-8 offset-xl-2">
+                <h1 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="index.php">Your
+                        page 😎</a></h1>
 
-
-                <h1 style="text-align: center;"><a style="text-decoration: none;
-   color: #212529;" href="index.php">Your page 😎</a></h1>
-
-
+                <!--Page element-->
                 <form name="form" action="" method="POST">
                     <h1 style="font-size:16px; font-weight:500;">Tab title</h1>
                     <input name="titolo_pagina" class="form-control" type="text" value="<?php echo htmlspecialchars($text4); ?>" style="width: 100%; margin-bottom:10px;">
@@ -102,6 +90,31 @@ $text5 = file_get_contents($file5);
                     <textarea rows="8" name="custom" class="form-control" style="width: 100%;"><?php echo htmlspecialchars($text5); ?></textarea>
                     <input class="btn btn-dark" type="submit" value="Save page" style="margin-top:10px; border-radius:0px;" />
                 </form>
+
+                <!--Settings section-->
+                <div style="margin-top:60px;" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Change password
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <form class="d-flex flex-column" method="post" action="changepassword.php">
+                                    <p>Use a minimum 4-character password. You cannot use some special symbols.</p>
+                                    <input placeholder="Insert here your old password" class="form-control" type="password" id="oldpassword" name="oldpassword" maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
+                                    <input placeholder="Insert here your new password" class="form-control" type="password" id="newpassword" name="newpassword" style="margin-top: 15px;" minlength="4" maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
+                                    <button class="btn btn-dark" type="submit" style="margin-top: 15px;">Yes, I
+                                        want to
+                                        change my password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -117,6 +130,7 @@ $text5 = file_get_contents($file5);
             <i class="fa fa-download my-float"></i>
         </a>
     </div>
+
     <!--Import script-->
     <script src="js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
@@ -127,9 +141,11 @@ $text5 = file_get_contents($file5);
             promotion: false, //Hide logo
             branding: false, //Hide name
             language: 'it', //Item lang
-            height: 800, //Default height
+            height: 1300, //Default height
             content_css: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css,text/custom.css", //Import css inside his area to render bootstrap element
-            toolbar: ["undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codeeditor | fullscreen | anchor"],
+            toolbar: [
+                "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codeeditor | fullscreen | anchor"
+            ],
             codeeditor_themes_pack: "twilight merbivore dawn kuroir",
             codeeditor_wrap_mode: true,
             codeeditor_font_size: 14,
@@ -138,12 +154,10 @@ $text5 = file_get_contents($file5);
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="js/tinymce.min.js"></script>
 
     <!--Credits - Thank you if you choose to leave them here! :) -->
     <p style="text-align: center; font-size:10px; color:#757575; margin-top:30px;"> Thank you for using mypage ❤️</p>
-
 </body>
 
 </html>
