@@ -1,12 +1,3 @@
-<?php session_start(); //Start session
-if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable exists with the user name
-
-} else {
-    header("Location: login.php"); //If does not exist redirect
-    exit;
-}
-?>
-
 <?php
 session_start();
 

@@ -1,12 +1,3 @@
-<?php session_start(); //Start session
-if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable exists with the user name
-
-} else {
-    header("Location: login.php"); //If does not exist redirect
-    exit;
-}
-?>
-
 <?php
 //Function to redirect to setup page if the folder TEXT (with all the data) does not exist
 function check_text_folder()
@@ -49,13 +40,11 @@ check_text_folder();
                         <a href="index.php">
                             <div class="col-md-12" style="text-align: center;">
                                 <img src="<?php $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "0.0.0.0";
-                                            echo $version; ?>"
-                                    style="max-width:150px; border-radius: 50px;margin: 20px;">
+                                            echo $version; ?>" style="max-width:150px; border-radius: 50px;margin: 20px;">
                             </div>
                         </a>
 
-                        <h2 style="text-align: center;"><a style="text-decoration: none; color: #212529;"
-                                href="index.php">Setup page</a></h2>
+                        <h2 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="index.php">Setup page</a></h2>
 
                         <form class="d-flex flex-column" method="post" action="setup_loginpassword.php">
                             <p style="text-align: center;">Use a minimum 4-character password. </br></br>This password
@@ -63,9 +52,7 @@ check_text_folder();
                                 loose it you need to delete and reinstall
                                 from
                                 scratch.</p>
-                            <input placeholder="Insert here your password" class="form-control" type="password"
-                                id="newpassword" name="newpassword" style="margin-top: 15px;" minlength="4"
-                                maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
+                            <input placeholder="Insert here your password" class="form-control" type="password" id="newpassword" name="newpassword" style="margin-top: 15px;" minlength="4" maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
                             <button class="btn btn-dark" type="submit" style="margin-top: 15px;">Set password</button>
                         </form>
 
