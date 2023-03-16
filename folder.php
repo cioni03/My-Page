@@ -28,3 +28,4 @@ function folder()
         }
     }
 }
+folder();

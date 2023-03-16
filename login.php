@@ -21,6 +21,17 @@ if (isset($_POST['Submit'])) {
         exit;
     }
 }
+
+//Function to redirect to setup page if the folder TEXT (with all the data) does not exist
+function check_text_folder()
+{
+    //Check if folder exist
+    if (!file_exists("text")) {
+        // Redirect to login.php
+        header("Location: setup_page.php");
+    }
+}
+check_text_folder();
 ?>
 
 <!--Html page-->
@@ -50,19 +61,23 @@ if (isset($_POST['Submit'])) {
                         <a href="index.php">
                             <div class="col-md-12" style="text-align: center;">
                                 <img src="<?php $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "0.0.0.0";
-                                            echo $version; ?>" style="max-width:150px; border-radius: 50px;margin: 20px;">
+                                            echo $version; ?>"
+                                    style="max-width:150px; border-radius: 50px;margin: 20px;">
                             </div>
                         </a>
 
                         <form class="d-flex flex-column" action="" method="post" name="Login_Form">
                             <?php if (isset($msg)) { ?>
-                                <p><?php echo $msg; ?></p>
+                            <p><?php echo $msg; ?></p>
                             <?php } ?>
                             <h1 style="font-size:19px; font-weight:500;">Username</h1>
-                            <input name="Username" type="text" class="Input" maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
+                            <input name="Username" type="text" class="Input" maxlength="10"
+                                pattern="[^(){}/><\][\\\x22,;|]+">
                             <h1 style="font-size:19px; font-weight:500; margin-top:10px;">Password</h1>
-                            <input name="Password" type="password" class="Input" maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
-                            <input class="btn btn-dark" name="Submit" type="submit" value="Login" class="Button3" style="margin-top:10px; border-radius:0px;">
+                            <input name="Password" type="password" class="Input" maxlength="10"
+                                pattern="[^(){}/><\][\\\x22,;|]+">
+                            <input class="btn btn-dark" name="Submit" type="submit" value="Login" class="Button3"
+                                style="margin-top:10px; border-radius:0px;">
                         </form>
 
                     </div>

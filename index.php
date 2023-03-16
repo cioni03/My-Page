@@ -10,6 +10,7 @@ if (isset($_SESSION['UserData']['Username'])) {
     echo '<a href="" onclick="downloadPage()" class="float-download">';
     echo '<i class="fa fa-download my-float"></i>';
     echo '</a>';
+} else {
 }
 ?>
 
@@ -37,7 +38,8 @@ if (isset($_SESSION['UserData']['Username'])) {
                 <div class="col-md-12" style="text-align: center;"><img src="<?php
                                                                                 $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "Insert url";
                                                                                 echo $version;
-                                                                                ?>" style="max-width:150px; border-radius: 50px;margin: 20px;"></div>
+                                                                                ?>"
+                        style="max-width:150px; border-radius: 50px;margin: 20px;"></div>
         </div></a>
     </div>
 
@@ -70,66 +72,66 @@ if (isset($_SESSION['UserData']['Username'])) {
 </html>
 
 <script>
-    function downloadPage() {
-        // Create a link with download attribute and file name
-        var link = document.createElement('a');
-        link.download = 'page.html';
+function downloadPage() {
+    // Create a link with download attribute and file name
+    var link = document.createElement('a');
+    link.download = 'page.html';
 
-        // Get the HTML code of the current page
-        var html = document.documentElement.outerHTML;
+    // Get the HTML code of the current page
+    var html = document.documentElement.outerHTML;
 
-        // Create a temporary element to manipulate the HTML code
-        var temp = document.createElement('div');
-        temp.innerHTML = html;
+    // Create a temporary element to manipulate the HTML code
+    var temp = document.createElement('div');
+    temp.innerHTML = html;
 
-        // Get all elements with class "float-edit"
-        var floatedits = temp.getElementsByClassName('float-edit');
+    // Get all elements with class "float-edit"
+    var floatedits = temp.getElementsByClassName('float-edit');
 
-        // Remove all elements with class "float-edit"
-        for (var i = floatedits.length - 1; i >= 0; i--) {
-            floatedits[i].parentNode.removeChild(floatedits[i]);
-        }
-
-        // Get all elements with class "float-exit"
-        var floatexits = temp.getElementsByClassName('float-exit');
-
-        // Remove all elements with class "float-exit"
-        for (var i = floatexits.length - 1; i >= 0; i--) {
-            floatexits[i].parentNode.removeChild(floatexits[i]);
-        }
-
-        // Get all elements with class "float-download"
-        var floatdownload = temp.getElementsByClassName('float-download');
-
-        // Remove all elements with class "float-download"
-        for (var i = floatdownload.length - 1; i >= 0; i--) {
-            floatdownload[i].parentNode.removeChild(floatdownload[i]);
-        }
-
-        // Get all elements with class "btn_download"
-        var btn_downloads = temp.getElementsByClassName('btn_download');
-
-        // Remove all elements with class "btn_download"
-        for (var i = btn_downloads.length - 1; i >= 0; i--) {
-            btn_downloads[i].parentNode.removeChild(btn_downloads[i]);
-        }
-
-        // Get the modified HTML code
-        var newhtml = temp.innerHTML;
-
-        // Encode the HTML code in base64
-        var base64 = btoa(unescape(encodeURIComponent(newhtml)));
-
-        // Set the link's href with the prefix data: and the base64 code
-        link.href = 'data:text/html;base64,' + base64;
-
-        // Add the link to the document
-        document.body.appendChild(link);
-
-        // Simulate a click on the link to download the file
-        link.click();
-
-        // Remove link from the document
-        document.body.removeChild(link);
+    // Remove all elements with class "float-edit"
+    for (var i = floatedits.length - 1; i >= 0; i--) {
+        floatedits[i].parentNode.removeChild(floatedits[i]);
     }
+
+    // Get all elements with class "float-exit"
+    var floatexits = temp.getElementsByClassName('float-exit');
+
+    // Remove all elements with class "float-exit"
+    for (var i = floatexits.length - 1; i >= 0; i--) {
+        floatexits[i].parentNode.removeChild(floatexits[i]);
+    }
+
+    // Get all elements with class "float-download"
+    var floatdownload = temp.getElementsByClassName('float-download');
+
+    // Remove all elements with class "float-download"
+    for (var i = floatdownload.length - 1; i >= 0; i--) {
+        floatdownload[i].parentNode.removeChild(floatdownload[i]);
+    }
+
+    // Get all elements with class "btn_download"
+    var btn_downloads = temp.getElementsByClassName('btn_download');
+
+    // Remove all elements with class "btn_download"
+    for (var i = btn_downloads.length - 1; i >= 0; i--) {
+        btn_downloads[i].parentNode.removeChild(btn_downloads[i]);
+    }
+
+    // Get the modified HTML code
+    var newhtml = temp.innerHTML;
+
+    // Encode the HTML code in base64
+    var base64 = btoa(unescape(encodeURIComponent(newhtml)));
+
+    // Set the link's href with the prefix data: and the base64 code
+    link.href = 'data:text/html;base64,' + base64;
+
+    // Add the link to the document
+    document.body.appendChild(link);
+
+    // Simulate a click on the link to download the file
+    link.click();
+
+    // Remove link from the document
+    document.body.removeChild(link);
+}
 </script>
