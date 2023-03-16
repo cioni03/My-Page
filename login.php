@@ -1,9 +1,33 @@
 <?php
 session_start();
 
+//Function to redirect to setup page if the folder TEXT (with all the data) does not exist
+function check_setup_file()
+{
+    //Check if folder exist
+    if (file_exists("setup_page.php") || file_exists("setup_loginpassword.php")) {
+        // Redirect to setup page
+        header("Location: setup_page.php");
+    }
+}
+check_setup_file();
+
+
+//Function to redirect to setup page if the folder TEXT (with all the data) does not exist
+function check_text_folder()
+{
+    //Check if folder exist
+    if (!file_exists("text")) {
+        // Redirect to setup page
+        header("Location: login.php");
+    }
+}
+check_text_folder();
+
 if (isset($_POST['Submit'])) {
     /*Unsuccessful attempt: Set error message */
-    $msg = "<span class='alert alert-danger d-flex align-items-center' role='alert' style='color:red'>Wrong username or password</span>";
+    $msg = "<span class='alert alert-danger d-flex align-items-center' role='alert' style='color:red'>Wrong username or
+    password</span>";
 
     $found = false;
     //Read the login credentials from the JSON file
@@ -21,17 +45,6 @@ if (isset($_POST['Submit'])) {
         exit;
     }
 }
-
-//Function to redirect to setup page if the folder TEXT (with all the data) does not exist
-function check_text_folder()
-{
-    //Check if folder exist
-    if (!file_exists("text")) {
-        // Redirect to login.php
-        header("Location: setup_page.php");
-    }
-}
-check_text_folder();
 ?>
 
 <!--Html page-->
