@@ -9,23 +9,27 @@ function folder()
     // If the folder doesn't exist, create it
     if (!file_exists($folder)) {
         mkdir($folder, 0777, true);
-    }
 
-    // Define an array of file names present in the folder
-    $files = array("corpo.html", "immagine.txt", "titolo.html", "titolo_pagina.txt", "custom.css");
 
-    // Remove any empty strings from the array
-    $files = array_filter($files);
+        // Define an array of file names present in the folder
+        $files = array("corpo.html", "immagine.txt", "titolo.html", "titolo_pagina.txt", "custom.css");
 
-    // Iterate over the array of file names
-    foreach ($files as $file) {
-        // Define the complete file path
-        $path = $folder . "/" . $file;
+        // Remove any empty strings from the array
+        $files = array_filter($files);
 
-        // If the file doesn't exist, create an empty file with touch()
-        if (!file_exists($path)) {
-            touch($path);
+        // Iterate over the array of file names
+        foreach ($files as $file) {
+            // Define the complete file path
+            $path = $folder . "/" . $file;
+
+            // If the file doesn't exist, create an empty file with touch()
+            if (!file_exists($path)) {
+                touch($path);
+            }
         }
+    } else {
+        // Redirect to homepage
+        header("Location: index.php");
     }
 }
 folder();
