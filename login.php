@@ -1,5 +1,9 @@
-<?php
-session_start();
+<?php session_start(); //Start session
+if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable exists with the user name
+    header("Location: edit.php"); //If does not exist redirect
+    exit;
+} else {
+}
 
 //Function to redirect to setup page if the folder TEXT (with all the data) does not exist
 function check_setup_file()
