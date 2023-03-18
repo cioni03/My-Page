@@ -20,5 +20,5 @@ if (!empty($NewPassword)) {
     unlink("setup_page.php");
 
     //Go to this page
-    header("location:logout.php");
+    header("location:clean.php");
 }
