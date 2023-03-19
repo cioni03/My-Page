@@ -148,7 +148,7 @@ $text5 = file_get_contents($file5);
         <script>
             tinymce.init({
                 selector: '#mytextarea', //Set this id
-                plugins: 'fullscreen codeeditor emoticons image anchor visualblocks importcss link wordcount table textcolor', //Add my plugins
+                plugins: 'fullscreen codeeditor emoticons image anchor visualblocks importcss link wordcount table', //Add my plugins
                 paste_data_images: true,
                 promotion: false, //Hide logo
                 branding: false, //Hide name
@@ -163,10 +163,6 @@ $text5 = file_get_contents($file5);
                 codeeditor_font_size: 14,
             });
         </script>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
-        <script src="js/tinymce.min.js"></script>
 
         <!--Credits - Thank you if you choose to leave them here! :) -->
         <p style="text-align: center; font-size:10px; color:#757575; margin-top:30px;"> Thank you for using mypage ❤️
@@ -221,8 +217,6 @@ $text5 = file_get_contents($file5);
         xhr.send();
     }
 </script>
-
-
 
 <?php
 //Check if the button with 'name = "button"' was clicked

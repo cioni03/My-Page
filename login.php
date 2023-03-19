@@ -78,32 +78,24 @@ if (isset($_POST['Submit'])) {
                         <a href="index.php">
                             <div class="col-md-12" style="text-align: center;">
                                 <img src="<?php $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "0.0.0.0";
-                                            echo $version; ?>"
-                                    style="max-width:150px; border-radius: 50px;margin: 20px;">
+                                            echo $version; ?>" style="max-width:150px; border-radius: 50px;margin: 20px;">
                             </div>
                         </a>
 
                         <form class="d-flex flex-column" action="" method="post" name="Login_Form">
                             <?php if (isset($msg)) { ?>
-                            <p><?php echo $msg; ?></p>
+                                <p><?php echo $msg; ?></p>
                             <?php } ?>
                             <h1 style="font-size:19px; font-weight:500;">Username</h1>
-                            <input name="Username" type="text" class="Input" maxlength="10"
-                                pattern="[^(){}/><\][\\\x22,;|]+">
+                            <input name="Username" type="text" class="Input" maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
                             <h1 style="font-size:19px; font-weight:500; margin-top:10px;">Password</h1>
-                            <input name="Password" type="password" class="Input" maxlength="10"
-                                pattern="[^(){}/><\][\\\x22,;|]+">
-                            <input class="btn btn-dark" name="Submit" type="submit" value="Login" class="Button3"
-                                style="margin-top:10px; border-radius:0px;">
+                            <input name="Password" type="password" class="Input" maxlength="10" pattern="[^(){}/><\][\\\x22,;|]+">
+                            <input class="btn btn-dark" name="Submit" type="submit" value="Login" class="Button3" style="margin-top:10px; border-radius:0px;">
                         </form>
 
                     </div>
 
                 </div>
-
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
-                <script src="js/tinymce.min.js"></script>
 
                 <p style="text-align: center; font-size:10px; color:#757575; margin-top:30px;"> Thank you for using
                     mypage ❤️</p>
