@@ -129,18 +129,19 @@ input.btn {
 
 /*Settings accordition*/
 .accordion-button {
-    border-radius: 10px!important;
+  z-index: 0!important;
+  border-radius: 10px!important;
   border-width: 2px;
   border-color: #eeeeee;
   border-style: solid;
-     outline: none!important;
+  outline: none!important;
   box-shadow: none!important;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
 .accordion-item {
-    border: 0px;
+  border: 0px;
 }
 
 
