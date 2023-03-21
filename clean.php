@@ -1,4 +1,6 @@
-<?php
+<?php session_start(); //Start session
+if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable exists with the user name
+
 include("folder.php"); //Include this to recrerate the folder once that it's deleted
 
 function deleteFolderOnClick()
@@ -18,3 +20,8 @@ function deleteFolderOnClick()
     }
 }
 deleteFolderOnClick(); //Run this function
+
+} else {
+    header("Location: login.php"); //If does not exist redirect
+    exit;
+}

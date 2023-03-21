@@ -1,17 +1,3 @@
-<?php
-//Function to redirect to setup page if the setup page exist
-function check_setup_page()
-{
-    //Check if file exist
-    if (file_exists("setup_page.php")) {
-        header("location:setup_page.php");
-        exit;
-    }
-}
-check_setup_page();
-
-?>
-
 <!--Html page-->
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +27,7 @@ check_setup_page();
 
 
                         <div class="" role="group" aria-label="Basic example" style="margin-top: 35px; text-align: center;">
-                            <form name="form" action="clean.php" method="POST">
+                            <form name="form" action="setup_login_page.php" method="POST">
                                 <input class="btn btn-dark" type="submit" value="Start from scratch" style="margin-top:10px; border-radius:0px;" />
                             </form>
                             <form name="form" action="template1.php" method="POST">
