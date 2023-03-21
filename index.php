@@ -20,10 +20,14 @@ if (isset($_SESSION['UserData']['Username'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title><?php
-            $version = (file_exists("text/titolo_pagina.txt")) ? file_get_contents("text/titolo_pagina.txt") : "Insert tab title";
-            echo $version;
-            ?></title>
+
+    <!--Browser tab title-->
+    <title>
+        <?php
+        $version = (file_exists("text/titolo_pagina.txt")) ? file_get_contents("text/titolo_pagina.txt") : "Insert tab title";
+        echo $version;
+        ?>
+    </title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -31,26 +35,28 @@ if (isset($_SESSION['UserData']['Username'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
-<body style="padding: 30px;">
-    <div class="container">
-        <div class="row">
-            <a href="index.php">
-                <div class="col-md-12" style="text-align: center;"><img src="<?php
-                                                                                $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "Insert url";
-                                                                                echo $version;
-                                                                                ?>" style="max-width:150px; border-radius: 50px;margin: 20px;"></div>
-        </div></a>
-    </div>
+<body style="padding: 0px;">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-xl-8 offset-xl-2">
+            <div class="col-xl-10 offset-xl-1">
 
+                <!--Top image-->
+                <div style="text-align: center;">
+                    <a href="index.php"><img src="<?php
+                                                    $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "Insert url";
+                                                    echo $version;
+                                                    ?>" style="max-width:150px; border-radius: 50px;margin: 20px;">
+                    </a>
+                </div>
+
+                <!--Page top title-->
                 <?php
                 $version = (file_exists("text/titolo.html")) ? file_get_contents("text/titolo.html") : "Insert page title";
                 echo '<h1 style="text-align: center;">' . $version . '</h1>';
                 ?>
 
+                <!--Body content-->
                 <?php
                 $version = (file_exists("text/corpo.html")) ? file_get_contents("text/corpo.html") : "Insert body text";
                 echo '<p>' . $version . '</p>';

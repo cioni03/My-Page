@@ -58,24 +58,19 @@ $text5 = file_get_contents($file5);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
     <title>Modifica profilo</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="text/custom.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
-<body style="padding: 10px; padding-bottom: 30px;">
-    <div class="container">
+<body>
+    <div class="container" style="padding-top:60px;">
         <div class="row">
-            <div class="col-md-12" style="text-align: center;">
-                <img style="border-radius: 50px;margin: 20px;">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-xl-8 offset-xl-2">
+            <div class="col-xl-10 offset-xl-1">
                 <h1 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="index.php">Your
                         page 😎</a></h1>
 
@@ -131,6 +126,7 @@ $text5 = file_get_contents($file5);
             </div>
         </div>
 
+        <!--Button-->
         <div class="container">
             <a href="index.php" class="float-edit">
                 <i class="fa fa-eye my-float"></i>
@@ -152,7 +148,7 @@ $text5 = file_get_contents($file5);
                 paste_data_images: true,
                 promotion: false, //Hide logo
                 branding: false, //Hide name
-                language: 'it', //Item lang
+                language: 'en', //Item lang
                 height: 1300, //Default height
                 content_css: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css,text/custom.css", //Import css inside his area to render bootstrap element
                 toolbar: [
@@ -220,8 +216,8 @@ $text5 = file_get_contents($file5);
     }
 </script>
 
+<!--Check if the button with 'name = "button"' was clicked-->
 <?php
-//Check if the button with 'name = "button"' was clicked
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['clean_btn'])) {
         echo "<script>
