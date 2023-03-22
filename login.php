@@ -8,10 +8,13 @@ if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable 
 //Function to redirect to setup page if the folder TEXT (with all the data) does not exist
 function check_setup_file()
 {
-    //Check if folder exist
+    //Check if the login files exist
     if (file_exists("setup_page.php") || file_exists("setup_loginpassword.php")) {
-        // Redirect to setup page
+        // If exist redirect to setup page to force the first setup
         header("Location: setup_page.php");
+    } elseif (file_exists("setup_clean.php") || file_exists("setup_page_template.php")) { //if those file that are needed to set the first template exist(and you no used in during the first config), delete it
+        unlink("setup_page_template.php");
+        unlink("setup_clean.php");
     }
 }
 check_setup_file();

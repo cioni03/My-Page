@@ -19,6 +19,11 @@ if (!empty($NewPassword)) {
     unlink("setup_loginpassword.php");
     unlink("setup_page.php");
 
-    //Go to this page
-    header("location:setup_page_template.php");
+
+    if (file_exists("setup_page_template.php")) {
+        //Go to this page
+        header("location:setup_page_template.php");
+    } else {
+        header("location:edit.php");
+    }
 }

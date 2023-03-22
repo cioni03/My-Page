@@ -14,6 +14,7 @@ function deleteFolderOnClick()
         rmdir($folderPath); //Delete empty folder
         folder();
         unlink("setup_clean.php");
+        unlink("setup_page_template.php");
         header("location:edit.php"); //Redirect to edit.php page
         exit;
     }

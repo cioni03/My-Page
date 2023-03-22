@@ -118,51 +118,57 @@ $text5 = file_get_contents($file5);
                                     <button name="clean_btn" class="btn btn-dark" type="submit">Reset MyPage</button>
                                 </form>
 
+                                <!--Third option-->
+                                <div style="margin-top: 35px;">
+                                    <p>Use a pre-built template to quickly start your site</p>
+                                    <button name="clean_btn" class="btn btn-dark" type="submit">Choose template</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
 
-        <!--Button-->
-        <div class="container">
-            <a href="index.php" class="float-edit">
-                <i class="fa fa-eye my-float"></i>
-            </a>
-            <a href="logout.php" class="float-exit">
-                <i class="fa fa-sign-out my-float"></i>
-            </a>
-            <a href="" onclick="downloadPage()" class="float-download">
-                <i class="fa fa-download my-float"></i>
-            </a>
-        </div>
+    <!--Button-->
+    <div class="container">
+        <a href="index.php" class="float-edit">
+            <i class="fa fa-eye my-float"></i>
+        </a>
+        <a href="logout.php" class="float-exit">
+            <i class="fa fa-sign-out my-float"></i>
+        </a>
+        <a href="" onclick="downloadPage()" class="float-download">
+            <i class="fa fa-download my-float"></i>
+        </a>
+    </div>
 
-        <!--Import script-->
-        <script src="js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-        <script>
-            tinymce.init({
-                selector: '#mytextarea', //Set this id
-                plugins: 'fullscreen codeeditor emoticons image anchor visualblocks importcss link wordcount table', //Add my plugins
-                paste_data_images: true,
-                promotion: false, //Hide logo
-                branding: false, //Hide name
-                language: 'en', //Item lang
-                height: 1300, //Default height
-                content_css: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css,text/custom.css", //Import css inside his area to render bootstrap element
-                toolbar: [
-                    "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codeeditor | fullscreen | anchor"
-                ],
-                codeeditor_themes_pack: "twilight merbivore dawn kuroir",
-                codeeditor_wrap_mode: true,
-                codeeditor_font_size: 14,
-            });
-        </script>
+    <!--Import script-->
+    <script src="js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea', //Set this id
+            plugins: 'fullscreen codeeditor emoticons image anchor visualblocks importcss link wordcount table', //Add my plugins
+            paste_data_images: true,
+            promotion: false, //Hide logo
+            branding: false, //Hide name
+            language: 'en', //Item lang
+            height: 1300, //Default height
+            content_css: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css,text/custom.css", //Import css inside his area to render bootstrap element
+            toolbar: [
+                "undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codeeditor | fullscreen | anchor"
+            ],
+            codeeditor_themes_pack: "twilight merbivore dawn kuroir",
+            codeeditor_wrap_mode: true,
+            codeeditor_font_size: 14,
+        });
+    </script>
 
-        <!--Credits - Thank you if you choose to leave them here! :) -->
-        <p style="text-align: center; font-size:10px; color:#757575; margin-top:30px;"> Thank you for using mypage ❤️
-        </p>
+    <!--Credits - Thank you if you choose to leave them here! :) -->
+    <p style="text-align: center; font-size:10px; color:#757575; margin-top:30px;"> Thank you for using mypage ❤️
+    </p>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
