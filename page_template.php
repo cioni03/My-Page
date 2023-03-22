@@ -33,7 +33,7 @@ if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable 
                     <div class="row">
 
                         <h2 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="index.php">Set template</a></h2>
-                        <h4 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="edit.php">Go back to your dashboard</a></h4>
+                        <h6 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="edit.php">Go back to your dashboard</a></h6>
 
 
                         <div class="" role="group" aria-label="Basic example" style="margin-top: 35px; text-align: center;">

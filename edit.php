@@ -121,7 +121,9 @@ $text5 = file_get_contents($file5);
                                 <!--Third option-->
                                 <div style="margin-top: 35px;">
                                     <p>Use a pre-built template to quickly start your site</p>
-                                    <button name="clean_btn" class="btn btn-dark" type="submit">Choose template</button>
+                                    <a href="page_template.php">
+                                        <button name="clean_btn" class="btn btn-dark" type="submit">Choose template</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
