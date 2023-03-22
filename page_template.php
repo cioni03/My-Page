@@ -18,6 +18,7 @@ if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
 <body style="padding: 30px;">
@@ -33,14 +34,14 @@ if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable 
                     <div class="row">
 
                         <h2 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="index.php">Set template</a></h2>
-                        <h6 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="edit.php">Go back to your dashboard</a></h6>
+                        <h6 style="text-align: center;"><a style="text-decoration: none; color: #212529;" href="edit.php">Or go back to your dashboard</a></h6>
 
 
                         <div class="" role="group" aria-label="Basic example" style="margin-top: 35px; text-align: center;">
-                            <form name="form" action="clean.php" method="POST">
+                            <form name="form" action="clean.php" method="POST" onsubmit="return confermaInvio(this)">
                                 <input class="btn btn-dark" type="submit" value="Start from scratch" style="margin-top:10px; border-radius:0px;" />
                             </form>
-                            <form name="form" action="template1.php" method="POST">
+                            <form name="form" action="template1.php" method="POST" onsubmit="return confermaInvio(this)">
                                 <input class="btn btn-dark" type="submit" value="Template 1" style="margin-top:10px; border-radius:0px;" />
                             </form>
                         </div>
@@ -59,3 +60,26 @@ if (isset($_SESSION['UserData']['Username'])) { //Check if the session variable 
 </body>
 
 </html>
+
+<!--Button-->
+<div class="container">
+    <a href="index.php" class="float-edit">
+        <i class="fa fa-eye my-float"></i>
+    </a>
+    <a href="logout.php" class="float-exit">
+        <i class="fa fa-sign-out my-float"></i>
+    </a>
+    <a href="" onclick="downloadPage()" class="float-download">
+        <i class="fa fa-download my-float"></i>
+    </a>
+</div>
+
+<script>
+    function confermaInvio(form) {
+        if (confirm('Sei sicuro di voler applicare questo template? Il template corrente verrà eliminato e non sarà possibile tornare indietro.')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
