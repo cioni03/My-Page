@@ -40,20 +40,31 @@ if (isset($_SESSION['UserData']['Username'])) {
     <div class="container">
         <div class="row">
             <div class="col-xl-10 offset-xl-1">
-
-                <!--Top image-->
-                <div style="text-align: center;">
-                    <a href="index.php"><img src="<?php
-                                                    $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "Insert url";
-                                                    echo $version;
-                                                    ?>" style="max-width:150px; border-radius: 50px;margin: 20px;">
-                    </a>
-                </div>
-
+                <!--Hide profile image-->
+                <?php
+                $filename = 'text/immagine.txt';
+                $file_content = file_get_contents($filename);
+                if (empty($file_content)) {
+                } else {
+                    //Hide profile image
+                    echo '<div style="text-align: center;">';
+                    echo '<a href="index.php"><img src="';
+                    $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "Insert url";
+                    echo $version;
+                    echo '" style="max-width:150px; border-radius: 50px;margin: 20px;"></a>';
+                    echo '</div>';
+                }
+                ?>
                 <!--Page top title-->
                 <?php
-                $version = (file_exists("text/titolo.html")) ? file_get_contents("text/titolo.html") : "Insert page title";
-                echo '<h1 style="text-align: center;">' . $version . '</h1>';
+                $filename = 'text/titolo.html';
+                $file_content = file_get_contents($filename);
+                if (empty($file_content)) {
+                } else {
+                    // Page top title
+                    $version = (file_exists("text/titolo.html")) ? file_get_contents("text/titolo.html") : "Insert page title";
+                    echo '<h1 style="text-align: center;">' . $version . '</h1>';
+                }
                 ?>
 
                 <!--Body content-->
