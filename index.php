@@ -37,44 +37,42 @@ if (isset($_SESSION['UserData']['Username'])) {
 
 <body style="padding: 0px;">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-10 offset-xl-1">
-                <!--Hide profile image-->
-                <?php
-                $filename = 'text/immagine.txt';
-                $file_content = file_get_contents($filename);
-                if (empty($file_content)) {
-                } else {
-                    //Hide profile image
-                    echo '<div style="text-align: center;">';
-                    echo '<a href="index.php"><img src="';
-                    $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "Insert url";
-                    echo $version;
-                    echo '" style="max-width:150px; border-radius: 50px;margin: 20px;"></a>';
-                    echo '</div>';
-                }
-                ?>
-                <!--Page top title-->
-                <?php
-                $filename = 'text/titolo.html';
-                $file_content = file_get_contents($filename);
-                if (empty($file_content)) {
-                } else {
-                    // Page top title
-                    $version = (file_exists("text/titolo.html")) ? file_get_contents("text/titolo.html") : "Insert page title";
-                    echo '<h1 style="text-align: center;">' . $version . '</h1>';
-                }
-                ?>
+    <div class="container-fluid" style="--bs-gutter-x:0px;">
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">-->
+        <!--Hide profile image-->
+        <?php
+        $filename = 'text/immagine.txt';
+        $file_content = file_get_contents($filename);
+        if (empty($file_content)) {
+        } else {
+            //Hide profile image
+            echo '<div style="text-align: center;">';
+            echo '<a href="index.php"><img src="';
+            $version = (file_exists("text/immagine.txt")) ? file_get_contents("text/immagine.txt") : "Insert url";
+            echo $version;
+            echo '" style="max-width:150px; border-radius: 50px;margin: 20px;"></a>';
+            echo '</div>';
+        }
+        ?>
+        <!--Page top title-->
+        <?php
+        $filename = 'text/titolo.html';
+        $file_content = file_get_contents($filename);
+        if (empty($file_content)) {
+        } else {
+            // Page top title
+            $version = (file_exists("text/titolo.html")) ? file_get_contents("text/titolo.html") : "Insert page title";
+            echo '<h1 style="text-align: center;">' . $version . '</h1>';
+        }
+        ?>
 
-                <!--Body content-->
-                <?php
-                $version = (file_exists("text/corpo.html")) ? file_get_contents("text/corpo.html") : "Insert body text";
-                echo '<p>' . $version . '</p>';
-                ?>
-
-            </div>
-        </div>
+        <!--Body content-->
+        <?php
+        $version = (file_exists("text/corpo.html")) ? file_get_contents("text/corpo.html") : "Insert body text";
+        echo '<p>' . $version . '</p>';
+        ?>
     </div>
 
     <!--Credits - Thank you if you choose to leave them here! :) -->
